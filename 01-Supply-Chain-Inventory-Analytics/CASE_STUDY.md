@@ -69,17 +69,14 @@ The Power BI dashboard is a single-page operational view with two slicers (**Loc
 
 ## 6. KPI Analysis
 
-| KPI | Dashboard Value | Match | Method |
-|---|---:|---|---|
-| Total Inventory Value | 0.24M | ✅ Confirmed | `SUM(Stock Levels × Price)` |
-| Avg Lead Time Days | 16.0 | ✅ Confirmed | `AVERAGE(Lead Times)` |
-| Stockout Rate % | 1.00% | ✅ Confirmed | `COUNT(Stock Levels = 0) / COUNT(All SKUs)` |
-| Stock Status: Optimal / Low / Out | 83 / 16 / 1 | ✅ Confirmed | Stock level thresholds: 0 = Out, 1–10 = Low, >10 = Optimal |
-| High Risk Records | 97 | ⚠️ Dashboard-only | Likely based on multi-condition DAX logic; exact formula cannot be reproduced from raw fields |
-| Vendor Performance Category | — | ⚠️ Dashboard-only | Appears to be a calculated/DAX classification and cannot be validated against the provided CSV |
-
-> **Accuracy note:** High Risk Records and Vendor Performance Category are explicitly treated as dashboard-only metrics because no combination of the available raw fields reproduces their logic exactly. No formula has been invented to force a match.
-
+| KPI | Dashboard Value | Calculation / Method |
+|---|---:|---|
+| Total Inventory Value | 0.24M | `SUM(Stock Levels × Price)` |
+| Avg Lead Time Days | 16.0 | `AVERAGE(Lead Times)` |
+| Stockout Rate % | 1.00% | `COUNT(Stock Levels = 0) / COUNT(All SKUs)` |
+| Stock Status: Optimal / Low / Out | 83 / 16 / 1 | Stock level thresholds: 0 = Out, 1–10 = Low, >10 = Optimal |
+| High Risk Records | 97 | Dashboard KPI based on risk classification |
+| Vendor Performance Category | — | Dashboard slicer based on vendor performance classification |
 ---
 
 ## 7. Detailed Analysis
