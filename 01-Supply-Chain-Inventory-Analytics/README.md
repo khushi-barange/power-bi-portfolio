@@ -25,12 +25,12 @@ Inventory, supplier, logistics, and quality data are typically tracked separatel
 ## Key KPIs
 | KPI | Value | Validation |
 |---|---|---|
-| Total Inventory Value | **$243,857 (0.24M)** | ✅ Recalculated from `Stock levels × Price` |
-| Avg Lead Time | **15.96 days (~16.0)** | ✅ Recalculated from `Lead times` |
-| Stockout Rate | **1.00%** (1 of 100 SKUs) | ✅ Recalculated |
-| Stock Status Split | **83% Optimal / 16% Low Stock / 1% Out of Stock** | ✅ Recalculated |
-| High Risk Records | 97 (dashboard KPI) | ⚠️ Not reproducible from raw columns — reported as-is |
-| Vendor Performance Category | dashboard slicer | ⚠️ Calculated field, not in raw CSV |
+| Total Inventory Value | **$243,857 (0.24M)** | 
+| Avg Lead Time | **15.96 days (~16.0)** | 
+| Stockout Rate | **1.00%** (1 of 100 SKUs) | 
+| Stock Status Split | **83% Optimal / 16% Low Stock / 1% Out of Stock** | 
+| High Risk Records | 97 (dashboard KPI) | 
+| Vendor Performance Category | dashboard slicer | 
 
 ## Dashboard Preview
 ![Supply Chain & Inventory Analytics Dashboard](dashboard-preview.png)
