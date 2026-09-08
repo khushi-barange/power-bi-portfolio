@@ -200,27 +200,7 @@ The Power BI dashboard is a single-page operational view with two slicers (**Loc
 
 ---
 
-## 10. STAR Case Study
-
-**Situation:** A supply chain organization operating across 5 locations, 5 suppliers, and 4 transportation modes lacked a single, number-based view connecting inventory health, supplier quality, logistics performance, and product revenue — making it hard to prioritize restocking, supplier reviews, or logistics changes with confidence.
-
-**Task:** As the data analyst, my objective was to consolidate the raw operational dataset into validated KPIs and an interactive Power BI dashboard that inventory, procurement, and logistics stakeholders could use to make prioritization decisions — while ensuring every headline number could be traced back to the underlying data.
-
-**Action:**
-- Profiled and cleaned the 100-record, 24-field dataset in Python (pandas) to check data types, duplicate lead-time columns, scale mismatches, and null/edge cases (e.g., zero-stock records) before building any visual.
-- Built calculated KPIs — total inventory value (stock × price), stockout rate, and stock-status buckets (Optimal / Low / Out of Stock) — and validated each against the dashboard.
-- Designed and built a single-page Power BI dashboard with Location and Vendor Performance Category slicers, 4 KPI cards, and 6 supporting visuals covering transportation, routes, supplier performance, product revenue, and stock distribution.
-- Cross-checked every dashboard number against an independent recalculation from the raw CSV, and explicitly flagged the two KPIs (High Risk Records, Vendor Performance Category) that could not be reproduced from the available raw columns rather than approximating them.
-- Extended the analysis beyond the dashboard's own visuals — supplier defect-rate ranking, carrier cost/speed comparison, location-level risk concentration, and correlation checks — to surface insights not directly visible on the dashboard face.
-
-**Result:**
-- Confirmed dashboard accuracy on all reproducible KPIs: **$243,857 inventory value, 15.96-day average lead time, 1.00% stockout rate, and an 83/16/1 stock-status split** all matched independent recalculation exactly.
-- Identified 12 quantified insights beyond the dashboard's surface metrics, including a **47.8% defect-rate gap between the best and worst supplier**, a **24.3% shipping-cost advantage for underused Sea transport**, and a **27.8% at-risk stock concentration in Bangalore** — each tied to a specific, actionable recommendation.
-- Flagged a data-scale limitation (manufacturing cost vs. revenue) that, if left unaddressed, could have led to a materially misleading ~99% "margin" claim.
-
----
-
-## 11. Technical Approach & Skills
+## 10. Technical Approach & Skills
 
 - **Data preparation:** Profiled the CSV in Python (pandas) — checked dtypes, distinct-value counts, duplicate/ambiguous columns (two lead-time fields), and scale differences between per-unit and aggregate fields.
 - **KPI & metric design:** Defined stock-status thresholds (Out of Stock = 0, Low Stock = 1–10, Optimal = >10 units), stockout rate, and total inventory value as reusable, auditable calculations.
@@ -231,7 +211,7 @@ The Power BI dashboard is a single-page operational view with two slicers (**Loc
 
 ---
 
-## 12. Limitations
+## 11. Limitations
 
 - **Small sample size:** 100 records limits how far location- and supplier-level percentages can be generalized; single-record effects (e.g., the one Out-of-Stock SKU driving the entire 1% stockout rate) can swing headline metrics.
 - **Manufacturing cost vs. revenue scale mismatch:** `Manufacturing costs` appears to be a per-unit figure while `Revenue generated` is an aggregate figure; the two are not directly netted into a valid margin in this analysis.
