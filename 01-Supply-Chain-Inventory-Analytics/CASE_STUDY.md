@@ -67,16 +67,18 @@ The Power BI dashboard is a single-page operational view with two slicers (**Loc
 
 ## 6. KPI Analysis
 
-| KPI | Dashboard Value | Match | Method |
-|---|---|---|---|---|
-| Total Inventory Value | 0.24M |  ✅ Confirmed | `SUM(Stock levels × Price)` |
-| Avg Lead Time Days | 16.0  | ✅ Confirmed | `AVERAGE(Lead times)` |
-| Stockout Rate % | 1.00% | ✅ Confirmed | `COUNT(Stock levels = 0) / COUNT(all SKUs)` |
-| Stock Status: Optimal / Low / Out | 83 / 16 / 1 |✅ Confirmed | Stock = 0 → Out; 1–10 → Low; >10 → Optimal |
-| High Risk Records | 97 | ⚠️ Dashboard KPI only | Likely a multi-condition DAX measure (e.g., combining lead time, defect rate, inspection status, and stock thresholds via OR logic) not fully specified by the raw fields alone |
-| Vendor Performance Category (slicer) | — | Not present as a raw column | ⚠️ Dashboard KPI only | Appears to be a calculated/DAX column grouping suppliers; cannot be validated against the CSV as provided |
+## 6. KPI Analysis
 
-Per the project's accuracy standard, **High Risk Records** and **Vendor Performance Category** are labeled as dashboard-only KPIs rather than backfilled with an invented formula, since no combination of raw fields reproduces them exactly.
+| KPI | Dashboard Value | Match | Method |
+|---|---:|---|---|
+| Total Inventory Value | 0.24M | ✅ Confirmed | `SUM(Stock Levels × Price)` |
+| Avg Lead Time Days | 16.0 | ✅ Confirmed | `AVERAGE(Lead Times)` |
+| Stockout Rate % | 1.00% | ✅ Confirmed | `COUNT(Stock Levels = 0) / COUNT(All SKUs)` |
+| Stock Status: Optimal / Low / Out | 83 / 16 / 1 | ✅ Confirmed | Stock level thresholds: 0 = Out, 1–10 = Low, >10 = Optimal |
+| High Risk Records | 97 | ⚠️ Dashboard-only | Likely based on multi-condition DAX logic; exact formula cannot be reproduced from raw fields |
+| Vendor Performance Category | — | ⚠️ Dashboard-only | Appears to be a calculated/DAX classification and cannot be validated against the provided CSV |
+
+> **Accuracy note:** High Risk Records and Vendor Performance Category are explicitly treated as dashboard-only metrics because no combination of the available raw fields reproduces their logic exactly. No formula has been invented to force a match.
 
 ---
 
