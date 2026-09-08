@@ -28,6 +28,4 @@ All figures independently recalculated from `supply_chain_data.csv` (100 SKUs) a
 
 ---
 
-### Dashboard KPIs flagged as non-reproducible
-- **High Risk Records (97):** no combination of raw columns reproduces this value; reported as dashboard-native (likely a multi-condition DAX measure).
-- **Vendor Performance Category:** used as a dashboard slicer but not present as a raw column; cannot be validated against the CSV.
+
