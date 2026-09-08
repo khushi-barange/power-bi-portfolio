@@ -67,13 +67,13 @@ The Power BI dashboard is a single-page operational view with two slicers (**Loc
 
 ## 6. KPI Analysis
 
-| KPI | Dashboard Value | Recalculated from CSV | Match | Method |
+| KPI | Dashboard Value | Match | Method |
 |---|---|---|---|---|
-| Total Inventory Value | 0.24M | **$243,857.44** | ✅ Confirmed | `SUM(Stock levels × Price)` |
-| Avg Lead Time Days | 16.0 | **15.96** | ✅ Confirmed | `AVERAGE(Lead times)` |
-| Stockout Rate % | 1.00% | **1.00%** (1 of 100 SKUs at 0 stock) | ✅ Confirmed | `COUNT(Stock levels = 0) / COUNT(all SKUs)` |
-| Stock Status: Optimal / Low / Out | 83 / 16 / 1 | **83 / 16 / 1** | ✅ Confirmed | Stock = 0 → Out; 1–10 → Low; >10 → Optimal |
-| High Risk Records | 97 | Not reproducible from visible columns | ⚠️ Dashboard KPI only | Likely a multi-condition DAX measure (e.g., combining lead time, defect rate, inspection status, and stock thresholds via OR logic) not fully specified by the raw fields alone |
+| Total Inventory Value | 0.24M |  ✅ Confirmed | `SUM(Stock levels × Price)` |
+| Avg Lead Time Days | 16.0  | ✅ Confirmed | `AVERAGE(Lead times)` |
+| Stockout Rate % | 1.00% | ✅ Confirmed | `COUNT(Stock levels = 0) / COUNT(all SKUs)` |
+| Stock Status: Optimal / Low / Out | 83 / 16 / 1 |✅ Confirmed | Stock = 0 → Out; 1–10 → Low; >10 → Optimal |
+| High Risk Records | 97 | ⚠️ Dashboard KPI only | Likely a multi-condition DAX measure (e.g., combining lead time, defect rate, inspection status, and stock thresholds via OR logic) not fully specified by the raw fields alone |
 | Vendor Performance Category (slicer) | — | Not present as a raw column | ⚠️ Dashboard KPI only | Appears to be a calculated/DAX column grouping suppliers; cannot be validated against the CSV as provided |
 
 Per the project's accuracy standard, **High Risk Records** and **Vendor Performance Category** are labeled as dashboard-only KPIs rather than backfilled with an invented formula, since no combination of raw fields reproduces them exactly.
