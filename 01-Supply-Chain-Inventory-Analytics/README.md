@@ -23,8 +23,8 @@ Inventory, supplier, logistics, and quality data are typically tracked separatel
 - File: [`supply_chain_data.csv`](supply_chain_data.csv)
 
 ## Key KPIs
-| KPI | Value | Validation |
-|---|---|---|
+| KPI | Value | 
+|---|---|
 | Total Inventory Value | **$243,857 (0.24M)** | 
 | Avg Lead Time | **15.96 days (~16.0)** | 
 | Stockout Rate | **1.00%** (1 of 100 SKUs) | 
